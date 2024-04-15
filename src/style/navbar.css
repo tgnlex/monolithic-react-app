@@ -1,0 +1,14 @@
+#navbar {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+#nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin: 20px;
+}

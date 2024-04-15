@@ -1,0 +1,16 @@
+.component {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.btn-controls {
+  margin: 20px;
+}
+
+.results {
+  font-size: 30px;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  width: 50px;
+  text-align: center;
+}
