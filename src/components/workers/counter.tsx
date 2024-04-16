@@ -1,6 +1,6 @@
 import {useWorker} from 'use-react-workers';
 import {useState} from 'react';
-import {countByInput} from '../functions/countByInput';
+import {countByInput} from '../../functions/countByInput';
 import '../../style/counter.css';
 const CounterWorker = () => {
   const [count, setCount] = useState(0);

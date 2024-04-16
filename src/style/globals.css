@@ -23,7 +23,8 @@
 .link {
   text-decoration: none;
 }
-.link :active {
+.link :active, 
+.nav-link :active {
   font: bold;
 }
 

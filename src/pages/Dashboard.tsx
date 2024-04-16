@@ -1,4 +1,4 @@
-import Navbar from '../navbar.tsx';
+import Navbar from '../components/navbar.tsx';
 import '../style/globals.css';
 function Dashboard() {
   return (

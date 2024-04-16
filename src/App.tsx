@@ -1,4 +1,4 @@
-import Navbar from './navbar';
+import Navbar from './components/navbar.tsx';
 import CounterWorker from './components/workers/counter.tsx';
 
 import './style/globals.css';

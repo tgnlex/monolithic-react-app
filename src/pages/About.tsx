@@ -1,4 +1,4 @@
-import Navbar from '../navbar';
+import Navbar from '../components/navbar';
 import '../style/globals.css';
 function About() {
   return (
