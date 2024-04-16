@@ -1,36 +1,40 @@
 import {useState, useEffect} from 'react';
+import axios from 'axios';
 import Navbar from '../components/navbar';
 import '../style/globals.css';
 import '../style/todolist.css';
+export interface TodoType {
+  id: number, 
+  title: string, 
+  description: string
+}
+export interface TodoArrayType {
+  todos: TodoType[];
+}
 
 function Todo() {
-  const [message, setMessage] = useState('');
-  
+  const [todos, setTodos] = useState([{}])
   useEffect(() => {
-    fetch('/api/test', {
-      headers: {
-        accept: 'application/json',
-      },
-    }
-    )
-   .then(response => {
-    if (response.ok) {
-      response.json().then(json => {
-        console.log(json)
-        setMessage(json);
-      })
-    }
-   })
-  })
-
-  console.log(message);
+    axios.get('http://localhost:5173/api/todos')
+      .then((res) => {
+        setTodos(res.data.todos);
+      }
+    ) 
+  }, []);
+  
   return (
     <>
     <Navbar />
       <main id="main">
         <h1 className="heading">Todo List</h1>
-        <p>API test</p>
-        <p>{!message ? "Loading" : message} </p>
+       <ul>
+        {todos.map(todo => (
+          <li>
+            <p>{todo.title}</p>
+            <p>{todo.description}</p>
+          </li>
+        ))}
+      </ul>
       </main>
     </>
 

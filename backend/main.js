@@ -3,24 +3,25 @@ import cors from 'cors';
 import todos from './data/todos.js';
 import {addTodo} from './lib/addTodo.js'
 import {serverMessage, error, PORT} from './constants.js';
+//import {createProxyMiddleware} from 'http-proxy-middleware'; 
 const app = express();
 
 app.use(cors);
 app.use(express.json());
 
+
 app.get('/api/test', (req, res , next) => {
-  res.setHeader('Content-Type','application/json')
   console.log("Endpoint Hit!")
-  res.json({message: "Hello World!"});
+  res.send("Hello World!");
   next()
 })
 
-app.get('/api/todos', (req, res, next) => {
+app.get('/todos', (req, res, next) => {
   res.json(todos)
   console.log(todos)
   next()
 })
-app.post('/api/todos/new', (req, res, next) => {
+app.post('/todos', (req, res, next) => {
   let newTitle = req.body.title;
   let newDesc = req.body.description
   let newId = todos.length + 1;
