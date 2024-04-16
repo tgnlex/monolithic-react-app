@@ -9,9 +9,9 @@ function Todo() {
   useEffect(() => {
     fetch('/api/test', {
       headers: {
-        Accept: 'application/json',
+        accept: 'application/json',
       },
-    },
+    }
     )
    .then(response => {
     if (response.ok) {
